@@ -1,0 +1,5 @@
+1: añadir 3 campos mas al panel "Ingreso de Estudiante". Sug: sexo(masculino o femenino), Colegio, edad sea un scroll/barra deslizadora, registro, etc
+2: Aumentar componentes en la tabla
+3: agregar imágenes al inicio de usuario, cambiar los íconos
+4: admin como contraseña ingresará a Estudiantes o ingresar como usuario con su contraseña y solo ingresar a ver lista estudiantes
+5: agregar boton cerrar sesion "devuelve a inicio sesion de contraseña"
