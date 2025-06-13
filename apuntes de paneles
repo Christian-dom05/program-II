@@ -1,0 +1,6 @@
+addMotionListener() para usar sólo un Override
+
+tarea: que la bolita inicie desde arriba, caiga y rebote, simulando un efecto físico
+
+tarea: hacer una ventana donde el teclado pueda moverse; hacer que cuadraditos aparezcan aleatoriamente moviendose de derecha a izquierda.
+si el cuadrado choca con alguno, se manda mensaje de "perdiste"
