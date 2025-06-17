@@ -1,0 +1,16 @@
+File: verifica si existe, devuelve datos del archivo (tamaño, ubicacion, nombre, etc) o modificar
+FileReader: lee caracter por caracter. No es eficiente para archivos grandes.
+
+try-catch: se usa en momentos donde no se pueda controlar las excepciones
+
+BufferedReader: lee de corrido, a diferencia del FileReader que lee letra por letra. el FileReader lee letra por letra y se guarda en un BufferedReader
+
+FileWriter: escribe caracter por caracter
+new FileWriter("archivo") (sobreescribe el archivo)
+new FileWriter("archivo") añade a la lista cadenas
+
+StringBuilder: aumenta o quita letras
+BufferedWriter:
+
+tarea: hacer interfaz que lea txt o ssv (buscar listas grandes en interner). Habra un boton que diga "leer", lea todo el ssc y guardarlo
+leer txt y crear objeto por cada fila. Otro boton que diga "mostrar detalles" que diga cuantos objetos ha leido
