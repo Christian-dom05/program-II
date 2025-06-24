@@ -1,0 +1,15 @@
+Concurrencia: múltiples procesos al mismo tiempo
+Hilos: son subprocesos que hace que un programa haga múltiples cosas
+
+existe problemas cuando una sola variable corre en dos hilos
+
+isAlive() devuelve un booleano; si el hilo termina de ejecutarse envía false, si sigue ejecutándose, envía true.
+función synchronized void nombre(){} hace que sólo un hilo entre en proceso
+método join() hace que el hilo principal espere a que termine de ejecutarse el hilo
+
+leer el capítulo número 4 del PDF.
+
+Examen final: Viernes 4
+Presentación de proyecto final: Martes 8
+
+Observers (Prog III)
