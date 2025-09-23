@@ -5,9 +5,16 @@ import practico3.obj.Imagen;
 public class Achicar implements IOperacionImagen{
     private Imagen target;
     private int porcentaje;
+    private PropertyChangeSupport observado;
     public Achicar(Imagen target, int porcentaje){
         this.target = target;
         this.porcentaje = porcentaje;
+        this.observado = new PropertyChangeSupport(this);
+    }
+    public void nuevoObservador(PropertyChangeListener observador) {
+        this.observado.addPropertyChangeListener(observador);
+        logger.info("Objeto cuenta con un nuevo observador: " +
+                observador.toString());
     }
     public void ejecutar() {
         int wf = (target.getAncho() * this.porcentaje) / 100;
@@ -26,5 +33,7 @@ public class Achicar implements IOperacionImagen{
         }
 
         target.setPixeles(wf, hf, resultado.getPixeles());
+        observado.firePropertyChange("ACHICAR", true, true);
     }
 }
+
