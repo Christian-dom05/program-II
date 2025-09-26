@@ -1,15 +1,22 @@
 package practico3.obj;
 
 import java.awt.*;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 
 public class Imagen {
     private int pixeles[][];
     private int ancho;
     private int alto;
+    private PropertyChangeSupport observado;
     public Imagen(int ancho, int alto){
         pixeles = new int[ancho][alto];
         this.ancho = ancho;
         this.alto = alto;
+        this.observado = new PropertyChangeSupport(this);
+    }
+    public void addObservador(PropertyChangeListener observador) {
+        observado.addPropertyChangeListener(observador);
     }
 
     public void setPixel(int x, int y, int r, int g, int b) {
@@ -21,6 +28,7 @@ public class Imagen {
     }
 
     public void setPixeles(int w, int h, int[][] nuevosPixeles) {
+        observado.firePropertyChange("IMAGEN", pixeles,nuevosPixeles);
         pixeles = nuevosPixeles;
         ancho = w;
         alto = h;

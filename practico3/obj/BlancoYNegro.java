@@ -1,13 +1,21 @@
 package practico3.obj;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class BlancoYNegro implements IOperacionImagen{
     private Imagen target;
+    private static final Logger logger = LogManager.getRootLogger();
     public BlancoYNegro(Imagen imagen) {
+        logger.info("Se recibió instancia de tipo Imagen: "+target.toString());
         this.target = imagen;
     }
     @Override
     public void ejecutar() {
         Imagen resultado = new Imagen(target.getAncho(), target.getAlto());
+        logger.info("Se crea nuevo instancia de Imagen");
 
         for (int i = 0; i < target.getAncho(); i++) {
             for (int j = 0; j < target.getAlto(); j++) {
@@ -22,8 +30,8 @@ public class BlancoYNegro implements IOperacionImagen{
                 }
             }
         }
-
         target.setPixeles(resultado.getAncho(), resultado.getAlto(),
                 resultado.getPixeles());
+        logger.info("Se pasò la nueva matriz al metodo setPixeles de la instancia "+target.toString());
     }
 }

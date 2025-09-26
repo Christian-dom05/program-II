@@ -1,14 +1,21 @@
 package practico3.obj;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class EfectoVertical implements IOperacionImagen {
     private int pixelesInvertidos[][];
     private int pixeles[][];
     private Imagen imagen;
+    private static final Logger logger = LogManager.getRootLogger();
     private int h;
     private int w;
     public EfectoVertical(Imagen imagen){
         this.imagen = imagen;
         pixeles = imagen.getPixeles();
+        logger.info("Se guardó ");
     }
     @Override
     public void ejecutar() {
@@ -24,5 +31,6 @@ public class EfectoVertical implements IOperacionImagen {
             }
         }
         imagen.setPixeles(w,h,pixelesInvertidos);
+        logger.info("Se pasò la nueva matriz al metodo setPixeles de la instancia "+imagen.toString());
     }
 }
